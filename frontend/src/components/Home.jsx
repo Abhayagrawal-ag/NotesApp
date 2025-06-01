@@ -27,7 +27,7 @@ function Home() {
   }
   return (
     <div style={{background: '#F9FAFB'}} className="min-h-screen w-full flex flex-col items-center justify-start p-4"> 
-      <h1 style={{background:'#3366FF'}} className="  w-screen text-center text-white text-2xl sm:text-4xl md:text-3xl font-semibold p-2 rounded-md">Notes App</h1>
+      <h1 style={{background:'#3366FF'}} className="  w-screen text-center text-white text-2xl sm:text-4xl md:text-3xl font-semibold p-2 rounded-md">Notepad</h1>
       <div className='flex flex-col items-center gap-9 mt-4'>
         <textarea value={text}
         onChange={(e) => setText(e.target.value)} style={{background: '#FFFFFF'}}

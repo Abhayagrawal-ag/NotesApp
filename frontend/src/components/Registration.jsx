@@ -188,15 +188,15 @@ function Registration() {
          className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' />
         <button  type="submit" className='bg-blue-500 text-white  p-3 rounded-md w-60 sm:w-70 md:w-80 font-bold '>Sign up</button>
       </form>
-      <p className='text-gray-500 mt-8'>After registration, an email has been sent — click here to verify your email. <span onClick={setShowOtpBox} className='text-blue-500 cursor-pointer text-center '>Verify Email</span></p>
+      <p className='text-gray-500 mt-4 text-xs'>After registration, an email has been sent — click here to verify your email. <span onClick={setShowOtpBox} className='text-blue-500 cursor-pointer text-center '>Verify Email</span></p>
       <p className='text-gray-500 mt-4'>Already have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/login')}>Sign in</span></p>
       <p  className='text-gray-500 mt-4 text-center'>Stuck or want to re-register? {''}<span onClick={handleDeleteAccount} className='text-blue-500 cursor-pointer'>DeleteAccount</span></p>
       </div>
 
         {showOtpBox && (
         <div className=" fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-          <div className="bg-white p-10 rounded-2xl  w-50 sm:w-80 md:w-80 ">
-            <h2 className="text-xl font-semibold mb-4 text-center ">Enter OTP</h2>
+          <div className="bg-white p-10 rounded-2xl  w-60 sm:w-80 md:w-80 ">
+            <h2 className="text-xs font-semibold mb-4 text-center ">Enter OTP</h2>
             <input
               type="text"
               placeholder="6-digit OTP"

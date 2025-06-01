@@ -29,7 +29,7 @@ import { useNavigate } from 'react-router-dom';
       navigate('/home');
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'error during Sign in';
-      toast.error('Error: you are not registered', {
+      toast.error('Error during Sign in', {
         autoClose: 1500,
       });
     }
