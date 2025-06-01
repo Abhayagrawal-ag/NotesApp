@@ -16,6 +16,8 @@ app.use(cors({
   origin: 'https://notes-app-eight-black.vercel.app',
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
 }));
+
+
 app.get("/", (req, res) => {
   res.send("this is note applicaiton")
 })
