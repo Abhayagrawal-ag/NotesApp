@@ -196,13 +196,13 @@ function Registration() {
         {showOtpBox && (
         <div className=" fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
           <div className="bg-white p-10 rounded-2xl  w-60 sm:w-80 md:w-80 ">
-            <h2 className="text-xs font-semibold mb-4 text-center ">Enter OTP</h2>
+            <h2 className="text-xl font-semibold mb-4 text-center ">Enter OTP</h2>
             <input
               type="text"
               placeholder="6-digit OTP"
               value={otp}
               onChange={(e) => setOtp(e.target.value)}
-              className="placeholder:text-xl w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6"
+              className="placeholder:text-xs w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-6"
             />
              <div className="mt-6"></div>
             <button
