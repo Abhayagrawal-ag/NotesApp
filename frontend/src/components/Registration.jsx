@@ -58,8 +58,6 @@ function Registration() {
       });
     }
   };
-
-
   const handleDeleteAccount = async (e) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -117,6 +115,7 @@ function Registration() {
   return (
     <>
     <h1 style={{background: '#3366FF'}} className='w-full text-white text-center text-xl p-3'>NotesKeeper</h1>
+    <p className='text-gray-500 mt-4 text-center md:text-xl'>Already have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/login')}>Sign in</span></p>
     <div className='flex flex-col items-center justify-center '>
       <form onSubmit={handleRegistration} className='flex flex-col items-center gap-12 mt-20 sm:mt-22 md:mt-24'>
         <input  type="text" placeholder="Email"
@@ -129,8 +128,7 @@ function Registration() {
          className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' />
         <button  type="submit" className='bg-blue-500 text-white  p-3 rounded-md w-60 sm:w-70 md:w-80 font-bold '>Sign up</button>
       </form>
-      <p className='text-gray-500 mt-4 text-xs text-center'>An email has been sent — click here to verify your email. <span onClick={() => { setShowOtpBox(true),toast.success('please check your Spam folder',{autoClose:1500})}} className='text-blue-500 cursor-pointer text-center '>Verify Email</span></p>
-      <p className='text-gray-500 mt-4'>Already have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/login')}>Sign in</span></p>
+      <p className='text-gray-500 mt-4 text-xs text-center'>Click here to verify your email ! <span onClick={() => { setShowOtpBox(true),toast.success('please check your Spam folder',{autoClose:1500})}} className='text-blue-500 cursor-pointer text-center '>Verify Email</span></p>
       <p  className='text-gray-500 mt-4 text-center'>Stuck or want to re-register? {''}<span onClick={handleDeleteAccount} className='text-blue-500 cursor-pointer'>DeleteAccount</span></p>
       </div>
 
