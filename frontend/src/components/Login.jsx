@@ -29,7 +29,7 @@ import { useNavigate } from 'react-router-dom';
       navigate('/home');
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'error during Sign in';
-      toast.error('Error during Sign in', {
+      toast.error('Either you are not registered or your email is not verified', {
         autoClose: 1500,
       });
     }
