@@ -54,7 +54,6 @@ function Registration() {
       localStorage.removeItem('email');
       setEmail('');
       setPassword('');
-      setShowOtpBox(true)
       } catch (error) {
         const errorMessage = error.response?.data?.message || 'Error deleting account'; 
         toast.error('Error deleting account', {
@@ -82,6 +81,7 @@ function Registration() {
         })
         setEmail('');
         setPassword('');
+        setShowOtpBox(true)
     } catch (error) { 
       toast.error('User already exists', {
         autoClose: 1500,
