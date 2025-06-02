@@ -44,7 +44,7 @@ function Registration() {
     }
 
     try {
-      const response = await axios.post('http://localhost:3000/auth/resend-otp', {
+      const response = await axios.post('https://notesapp-production-97fe.up.railway.app/auth/resend-otp', {
         email: storedEmail
       });
       toast.success(response.data.message || 'New OTP sent successfully!', {
