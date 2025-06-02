@@ -24,11 +24,13 @@ router.post('/register', async (req, res) => {
       }
     const hashedPassword = await bcrypt.hash(password, 10);
     const verificationCode = Math.floor(100000 + Math.random() * 900000).toString()
+    const verificationCodeExpires = new Date(Date.now() + 10 * 60 * 1000);
     const user = new User({
       email,
       password: hashedPassword,
       verificationCode,
-      isVerified:false
+      isVerified:false,
+      verificationCodeExpires
     });
     await user.save();
     SendVerificationCode(user.email, verificationCode);
@@ -114,11 +116,18 @@ router.post('/verify', async (req, res) => {
         message: "Invalid or expired verification code" 
       });
     }
+     if(new Date() > user.verificationCodeExpires){
+      return res.status(400).json({
+        message: "Verification code has expired. please request a new one"
+      })
+    }
     await User.findOneAndUpdate(
       { _id: user._id },
       { 
         $set: { isVerified: true },
-        $unset: { verificationCode: 1 }
+        $unset: { verificationCode: 1,
+          verificationCodeExpires:1
+        }
       }
     );
     console.log('User verified successfully:', user.email);
@@ -132,6 +141,48 @@ router.post('/verify', async (req, res) => {
     });
   }
 })
+
+//Resend otp route
+router.post('/resend-otp',async(req,res) => {
+  try{
+    const{email} = req.body;
+    if(!email){
+       return res.status(400).json({ message: 'Email is required' });
+    }
+    if(!validator.isEmail(email)){
+      return res.status(400).json({
+        message: "Invalid email format"
+      })
+    }
+    const user = await User.findOne({email})
+    if (!user) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+
+    if (user.isVerified) {
+      return res.status(400).json({ message: 'User is already verified' });
+    }
+    const verificationCode = Math.floor(100000 + Math.random() * 900000).toString();
+    const verificationCodeExpires = new Date(Date.now() + 10 * 60 * 1000); 
+    await User.findOneAndUpdate(
+      { email },
+      { 
+        verificationCode,
+        verificationCodeExpires
+      }
+    );
+
+    SendVerificationCode(email, verificationCode);
+
+    res.status(200).json({ message: 'New verification code sent successfully' });
+  } catch (error) {
+    console.error('Error resending OTP:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+  
+})
+
+
 export default router;
 
 

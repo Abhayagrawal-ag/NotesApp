@@ -34,6 +34,32 @@ function Registration() {
       });
     }
   };
+
+  const handleResendOtp = async () => {
+    const storedEmail = localStorage.getItem('email');
+    if (!storedEmail) {
+      return toast.error('Email not found. Please register again.', {
+        autoClose: 1500,
+      });
+    }
+
+    try {
+      const response = await axios.post('http://localhost:3000/auth/resend-otp', {
+        email: storedEmail
+      });
+      toast.success(response.data.message || 'New OTP sent successfully!', {
+        autoClose: 1500,
+      });
+      setOtp(''); 
+    } catch (error) {
+      const errorMessage = error.response?.data?.message || 'Failed to resend OTP';
+      toast.error(errorMessage, {
+        autoClose: 1500,
+      });
+    }
+  };
+
+
   const handleDeleteAccount = async (e) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -124,6 +150,11 @@ function Registration() {
               onClick={handleVerifyOtp}
               className="  w-full font-bold bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition duration-200"
             >Verify OTP
+            </button>
+             <div className="mt-6"></div>
+             <button onClick={handleResendOtp}
+              className="  w-full font-bold bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-200"
+            >Resend OTP
             </button>
              
           </div>
