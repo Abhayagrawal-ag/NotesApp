@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { use } from 'react';
 import { useState, useEffect } from 'react';
 import {toast} from 'react-toastify';
 import axios from 'axios';
@@ -9,6 +9,7 @@ function Registration() {
   const [password, setPassword] = useState('');
   const[showOtpBox, setShowOtpBox] = useState(false);
   const[otp,setOtp] = useState("");
+  const[showPassword, setShowPassword] =useState("");
    useEffect(() => {
     const storedEmail = localStorage.getItem('email');
     const otpPending = localStorage.getItem('otpPending');
@@ -111,7 +112,7 @@ function Registration() {
       const response = await axios.post('https://notesapp-production-97fe.up.railway.app/auth/register', { email, password });
         localStorage.setItem('email', email);
          localStorage.setItem('otpPending', 'true');
-        toast.success("Sign up successfull, now verify your Email", {
+        toast.success("Sign up successfull, email has been sent", {
           autoClose:1500,
         })
         setEmail('');
@@ -133,10 +134,30 @@ function Registration() {
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' ></input>
-        <input type="password" placeholder="Password"
+
+        {/* <input type="password" placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-         className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' />
+         className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' /> */}
+
+         <div className="relative w-60 sm:w-70 md:w-80">
+          <input 
+            type={showPassword ? "text" : "password"} 
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className='border border-gray-300 p-3 rounded-md w-full placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl pr-12' 
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+          >
+            {showPassword ? "🙈" : "👁️"}
+          </button>
+        </div>
+
+
         <button  type="submit" className='bg-blue-500 text-white  p-3 rounded-md w-60 sm:w-70 md:w-80 font-bold '>Sign up</button>
       </form>
       <p className='text-gray-500 mt-4 text-xs text-center'>Click here to verify your email ! <span onClick={() => { setShowOtpBox(true),toast.success('please check your Spam folder',{autoClose:1500})}} className='text-blue-500 cursor-pointer text-center '>Verify Email</span></p>
