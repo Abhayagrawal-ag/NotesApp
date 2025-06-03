@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState('');
   const handleLogin = async (e) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -42,7 +43,30 @@ import { useNavigate } from 'react-router-dom';
           <form onSubmit={handleLogin} className='flex flex-col items-center gap-6 sm:gap-10  '>
           <p className='mb-4 text-center font-bold'>Login to your account !</p>
           <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' ></input>
-          <input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' />
+
+          {/* <input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' /> */}
+
+
+           <div className="relative w-60 sm:w-70 md:w-80">
+          <input 
+            type={showPassword ? "text" : "password"} 
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className='border border-gray-300 p-3 rounded-md w-full placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl pr-12' 
+          />
+          <button
+            type="button"
+            onClick={() => setShowPassword(!showPassword)}
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
+          >
+            {showPassword ? " " : "👁️"}
+          </button> 
+         </div>
+
+
+
+
           <button  type="submit" className='bg-blue-500 text-white text-xl p-3 rounded-md w-50 sm:w-80 md:w-80 font-bold '>Sign in</button>
           </form> 
         </div>

@@ -127,7 +127,7 @@ function Registration() {
   return (
     <>
     <h1 style={{background: '#3366FF'}} className='w-full text-white text-center text-xl p-3'>NotesKeeper</h1>
-    <p className='text-gray-500 mt-4 text-center md:text-xl'>Already have an account? <span text-xl className='text-blue-500 cursor-pointer' onClick={() => navigate('/login')}>Sign in</span></p>
+    <p className='text-gray-500 mt-4 text-center md:text-xl'>Already have an account? <span  className='text-blue-500 cursor-pointer text-xl' onClick={() => navigate('/login')}>Sign in</span></p>
     <div className='flex flex-col items-center justify-center '>
       <form onSubmit={handleRegistration} className='flex flex-col items-center gap-12 mt-20 sm:mt-22 md:mt-24'>
         <input  type="text" placeholder="Email"
@@ -153,7 +153,7 @@ function Registration() {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
           >
-            {showPassword ? "🙈" : "👁️"}
+            {showPassword ? "" : "👁️"}
           </button> 
          </div>
 
