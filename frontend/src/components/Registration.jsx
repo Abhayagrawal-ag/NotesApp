@@ -160,7 +160,7 @@ function Registration() {
 
         <button  type="submit" className='bg-blue-500 text-white  p-3 rounded-md w-60 sm:w-70 md:w-80 font-bold '>Sign up</button>
       </form>
-      <p className='text-gray-500 mt-4 text-xs text-center'>Click here to verify your email ! <span onClick={() => { setShowOtpBox(true),toast.success('please check your Spam folder',{autoClose:1500})}} className='text-blue-500 cursor-pointer text-center '>Verify Email</span></p>
+      <p className='text-gray-500 mt-4 text-xs text-center'>Click here to verify your email ! <span onClick={setShowOtpBox} className='text-blue-500 cursor-pointer text-center '>Verify Email</span></p>
       <p  className='text-gray-500 mt-4 text-center'>Stuck or want to re-register? {''}<span onClick={handleDeleteAccount} className='text-blue-500 cursor-pointer'>DeleteAccount</span></p>
       </div>
 
