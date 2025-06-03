@@ -9,7 +9,7 @@ function Registration() {
   const [password, setPassword] = useState('');
   const[showOtpBox, setShowOtpBox] = useState(false);
   const[otp,setOtp] = useState("");
-  // const[showPassword, setShowPassword] =useState('');
+  const[showPassword, setShowPassword] =useState('');
    useEffect(() => {
     const storedEmail = localStorage.getItem('email');
     const otpPending = localStorage.getItem('otpPending');
@@ -127,7 +127,7 @@ function Registration() {
   return (
     <>
     <h1 style={{background: '#3366FF'}} className='w-full text-white text-center text-xl p-3'>NotesKeeper</h1>
-    <p className='text-gray-500 mt-4 text-center md:text-xl'>Already have an account? <span className='text-blue-500 cursor-pointer' onClick={() => navigate('/login')}>Sign in</span></p>
+    <p className='text-gray-500 mt-4 text-center md:text-xl'>Already have an account? <span text-xl className='text-blue-500 cursor-pointer' onClick={() => navigate('/login')}>Sign in</span></p>
     <div className='flex flex-col items-center justify-center '>
       <form onSubmit={handleRegistration} className='flex flex-col items-center gap-12 mt-20 sm:mt-22 md:mt-24'>
         <input  type="text" placeholder="Email"
@@ -135,12 +135,12 @@ function Registration() {
         onChange={(e) => setEmail(e.target.value)}
         className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' ></input>
 
-        <input type="password" placeholder="Password"
+        {/* <input type="password" placeholder="Password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
-         className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' />
+         className='border border-gray-300 p-3 rounded-md w-60 sm:w-70 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' /> */}
 
-         {/* <div className="relative w-60 sm:w-70 md:w-80">
+         <div className="relative w-60 sm:w-70 md:w-80">
           <input 
             type={showPassword ? "text" : "password"} 
             placeholder="Password"
@@ -154,8 +154,8 @@ function Registration() {
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
           >
             {showPassword ? "🙈" : "👁️"}
-          </button> */}
-        {/* </div> */}
+          </button> 
+         </div>
 
 
         <button  type="submit" className='bg-blue-500 text-white  p-3 rounded-md w-60 sm:w-70 md:w-80 font-bold '>Sign up</button>
