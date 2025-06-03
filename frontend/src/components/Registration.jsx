@@ -9,6 +9,14 @@ function Registration() {
   const [password, setPassword] = useState('');
   const[showOtpBox, setShowOtpBox] = useState(false);
   const[otp,setOtp] = useState("");
+   useEffect(() => {
+    const storedEmail = localStorage.getItem('email');
+    const otpPending = localStorage.getItem('otpPending');
+    
+    if (storedEmail && otpPending === 'true') {
+      setShowOtpBox(true);
+    }
+  }, []);
 
   const handleVerifyOtp = async () => {
     if (!otp) {
@@ -26,6 +34,7 @@ function Registration() {
       setShowOtpBox(false);
       setOtp('');
       localStorage.removeItem('email'); 
+      localStorage.removeItem('otpPending')
       navigate('/login');
     } catch (error) {
       const errorMessage = error.response?.data?.message || 'Invalid OTP';
@@ -76,6 +85,7 @@ function Registration() {
         autoClose: 1500,
       });
       localStorage.removeItem('email');
+      localStorage.removeItem('otpPending')
       setEmail('');
       setPassword('');
       } catch (error) {
@@ -100,6 +110,7 @@ function Registration() {
     try {
       const response = await axios.post('https://notesapp-production-97fe.up.railway.app/auth/register', { email, password });
         localStorage.setItem('email', email);
+         localStorage.setItem('otpPending', 'true');
         toast.success("Sign up successfull, now verify your Email", {
           autoClose:1500,
         })
