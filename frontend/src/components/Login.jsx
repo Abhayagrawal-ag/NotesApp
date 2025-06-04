@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
-import {Eye, EyeOff} from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
  function Login() {
   const navigate = useNavigate();
