@@ -2,7 +2,7 @@ import React from 'react';
 import {useState} from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
-import { Eye, EyeOff } from 'lucide-react';
+// import { Eye, EyeOff } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
  function Login() {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ import { useNavigate } from 'react-router-dom';
           {/* <input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' /> */}
 
 
-           <div className="relative w-50 sm:w-70 md:w-80">
+           {/* <div className="relative w-50 sm:w-70 md:w-80">
           <input 
             type={showPassword ? "text" : "password"} 
             placeholder="Password"
@@ -62,7 +62,7 @@ import { useNavigate } from 'react-router-dom';
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
           >
             {/* {showPassword ? "🙈" : "👁️"} */}
-               {showPassword ? (
+               {/* {showPassword ? (
               <EyeOff size={20} className="cursor-pointer" />
             ) : (
               <Eye size={20} className="cursor-pointer" />
@@ -70,7 +70,7 @@ import { useNavigate } from 'react-router-dom';
 
 
           </button> 
-         </div>
+        //  </div> */} 
 
 
 
