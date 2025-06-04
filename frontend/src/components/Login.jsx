@@ -39,7 +39,7 @@ import { useNavigate } from 'react-router-dom';
   return (
     <>
       <p style={{background: '#3366FF'}} className='w-full font-bold p-3 text-2xl sm:text-3xl md:text-4xl text-white text-center'>Welcome Back to DailyDrafts</p>
-      <div className='flex flex- items-center  justify-center mt-8'>
+      <div className='flex flex-col items-center  justify-center mt-8'>
         <div className='bg-gray-100 h-[310px] w-[250px] sm:h-[350px] sm:w-[400px] md:h-[500px] md:w-[500px] rounded-md shadow-md flex flex-col items-center justify-center'>
           <form onSubmit={handleLogin} className='flex flex-col items-center gap-6 sm:gap-10  '>
           <p className='mb-4 text-center font-bold sm:text-xl md:text-2xl'>Login to your account !</p>
