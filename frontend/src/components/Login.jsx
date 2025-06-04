@@ -2,12 +2,13 @@ import React from 'react';
 import {useState} from 'react';
 import axios from 'axios';
 import {toast} from 'react-toastify';
+import {Eye, EyeOff} from 'react';
 import { useNavigate } from 'react-router-dom';
  function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -60,7 +61,14 @@ import { useNavigate } from 'react-router-dom';
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
           >
-            {showPassword ? "🙈" : "👁️"}
+            {/* {showPassword ? "🙈" : "👁️"} */}
+               {showPassword ? (
+              <EyeOff size={20} className="cursor-pointer" />
+            ) : (
+              <Eye size={20} className="cursor-pointer" />
+            )}
+
+
           </button> 
          </div>
 
