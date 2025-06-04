@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import { useState, useEffect } from 'react';
+import { Eye, EyeOff } from 'lucide-react';
 import {toast} from 'react-toastify';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
@@ -9,7 +10,7 @@ function Registration() {
   const [password, setPassword] = useState('');
   const[showOtpBox, setShowOtpBox] = useState(false);
   const[otp,setOtp] = useState("");
-  const[showPassword, setShowPassword] =useState('');
+  const[showPassword, setShowPassword] =useState(false);
    useEffect(() => {
     const storedEmail = localStorage.getItem('email');
     const otpPending = localStorage.getItem('otpPending');
@@ -153,7 +154,15 @@ function Registration() {
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
           >
-            {showPassword ? "🙈" : "👁️"}
+            {/* {showPassword ? "🙈" : "👁️"} */}
+
+                      {showPassword ? (
+              <EyeOff size={20} className="cursor-pointer" />
+            ) : (
+              <Eye size={20} className="cursor-pointer" />
+            )}
+
+
           </button> 
          </div>
 

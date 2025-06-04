@@ -9,7 +9,15 @@
   "engines": {
     "node": ">=14.0.0"
   },
-  "keywords": ["notes", "nodejs", "express", "mongodb"],
+  "keywords": [
+    "notes",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
   "author": "abhay agrawal",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lucide-react": "^0.513.0"
+  }
 }
