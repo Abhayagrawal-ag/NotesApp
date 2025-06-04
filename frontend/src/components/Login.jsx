@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
+  // const [showPassword, setShowPassword] = useState(false);
   const handleLogin = async (e) => {
     e.preventDefault();
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -45,10 +45,10 @@ import { useNavigate } from 'react-router-dom';
           <p className='mb-4 text-center font-bold sm:text-xl md:text-2xl'>Login to your account !</p>
           <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' ></input>
 
-          {/* <input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' /> */}
+          <input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' />
 
 
-           <div className="relative w-50 sm:w-70 md:w-80">
+           {/* <div className="relative w-50 sm:w-70 md:w-80">
           <input 
             type={showPassword ? "text" : "password"} 
             placeholder="Password"
@@ -60,9 +60,9 @@ import { useNavigate } from 'react-router-dom';
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-gray-700"
-          >
+          > */}
             {/* {showPassword ? "🙈" : "👁️"} */}
-               {showPassword ? (
+               {/* {showPassword ? (
               <EyeOff size={20} className="cursor-pointer" />
             ) : (
               <Eye size={20} className="cursor-pointer" />
@@ -70,7 +70,7 @@ import { useNavigate } from 'react-router-dom';
 
 
           </button> 
-         </div>
+         </div> */}
 
 
 
