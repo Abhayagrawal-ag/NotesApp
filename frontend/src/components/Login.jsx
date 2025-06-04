@@ -45,7 +45,7 @@ import { useNavigate } from 'react-router-dom';
           <p className='mb-4 text-center font-bold sm:text-xl md:text-2xl'>Login to your account !</p>
           <input type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' ></input>
 
-          <input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' />
+          {/* <input type="password" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} className='border border-gray-300 p-3 rounded-md w-50 sm:w-80 md:w-80 placeholder:text-xl placeholder:sm:text-2xl placeholder:md:text-2xl' /> */}
 
 
            <div className="relative w-50 sm:w-70 md:w-80">
