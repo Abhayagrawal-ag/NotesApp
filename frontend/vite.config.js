@@ -11,8 +11,8 @@ export default defineConfig({
       registerType: "autoUpdate",
       includeAssets: ["favicon.svg", "robots.txt", "apple-touch-icon.png"],
       manifest: {
-        name: "Your App Name",
-        short_name: "App",
+      name: "QuickNotes",
+        short_name: "QuickNotes",
         description: "Your app description here",
         start_url: "/",
         display: "standalone",
