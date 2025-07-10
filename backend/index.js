@@ -19,7 +19,7 @@ app.use(express.json());
 //   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
 // }));
 app.use(cors({
-  origin: "https://noteapplication-frontend.onrender.com",
+  origin: "https://notesapp-frontend-knv6.onrender.com",
   credentials: true
 }));
 
