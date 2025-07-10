@@ -29,7 +29,7 @@ function Registration() {
     }
     try {
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/verify",
+        "https://notesapp-backend-iti6.onrender.com/auth/verify",
         {
           code: otp,
         }
@@ -60,7 +60,7 @@ function Registration() {
 
     try {
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/resend-otp",
+        "https://notesapp-backend-iti6.onrender.com/auth/resend-otp",
         {
           email: storedEmail,
         }
@@ -98,7 +98,7 @@ function Registration() {
     }
     try {
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/register",
+        "https://notesapp-backend-iti6.onrender.com/auth/register",
         { email, password }
       );
       localStorage.setItem("email", email);

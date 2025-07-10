@@ -13,7 +13,7 @@
 //     }
 //      try {
 //       const userEmail = localStorage.getItem('email');
-// const response = await axios.post('https://noteapplication-backend.onrender.com/notes', { text,userEmail });
+// const response = await axios.post('https://notesapp-backend-iti6.onrender.com/notes', { text,userEmail });
 //       toast.success('Note added successfully', {
 //         autoClose: 1500,
 //       });
@@ -63,10 +63,10 @@ function Home() {
     try {
       const userEmail = localStorage.getItem("email");
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/notes",
+        "https://notesapp-backend-iti6.onrender.com/notes",
         { text, userEmail }
       );
-      // const response = await axios.post('https://noteapplication-backend.onrender.com/notes', { text, userEmail });
+      // const response = await axios.post('https://notesapp-backend-iti6.onrender.com/notes', { text, userEmail });
       toast.success("Note added successfully", {
         autoClose: 1500,
       });
@@ -101,11 +101,11 @@ function Home() {
       // API call to delete user account and all notes
       // Route is under /auth prefix as per your index.js
       const response = await axios.delete(
-        `https://noteapplication-backend.onrender.com/auth/user/${encodeURIComponent(
+        `https://notesapp-backend-iti6.onrender.com/auth/user/${encodeURIComponent(
           userEmail
         )}`
       );
-      // const response = await axios.delete(`https://noteapplication-backend.onrender.com/auth/user/${encodeURIComponent(userEmail)}`);
+      // const response = await axios.delete(`https://notesapp-backend-iti6.onrender.com/auth/user/${encodeURIComponent(userEmail)}`);
 
       console.log("Delete response:", response.data);
 

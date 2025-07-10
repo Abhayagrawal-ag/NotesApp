@@ -31,7 +31,7 @@ function Login() {
   //         });
   //       }
   //   try {
-  //     const response = await axios.post('https://noteapplication-backend.onrender.com/auth/login', { email, password });
+  //     const response = await axios.post('https://notesapp-backend-iti6.onrender.com/auth/login', { email, password });
   //     localStorage.setItem('email', email);
   //     toast.success('Sign in successful', {
   //       autoClose: 1500,
@@ -68,7 +68,7 @@ function Login() {
 
     try {
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/login",
+        "https://notesapp-backend-iti6.onrender.com/auth/login",
         {
           email,
           password,

@@ -19,7 +19,7 @@ function ShareNotes() {
         try {
           const userEmail = localStorage.getItem("email");
           const response = await axios.get(
-            `https://noteapplication-backend.onrender.com/auth/notes/${noteId}`,
+            `https://notesapp-backend-iti6.onrender.com/auth/notes/${noteId}`,
             {
               params: { email: userEmail },
             }
@@ -64,7 +64,7 @@ function ShareNotes() {
 
     try {
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/share-note",
+        "https://notesapp-backend-iti6.onrender.com/auth/share-note",
         {
           noteId: noteId,
           senderEmail: senderEmail,

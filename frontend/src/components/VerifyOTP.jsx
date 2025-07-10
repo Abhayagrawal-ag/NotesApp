@@ -28,7 +28,7 @@ function VerifyOTP() {
 
     try {
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/verify-otp",
+        "https://notesapp-backend-iti6.onrender.com/auth/verify-otp",
         {
           code,
         }

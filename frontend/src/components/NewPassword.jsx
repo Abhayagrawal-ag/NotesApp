@@ -50,7 +50,7 @@ function NewPassword() {
       }
 
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/reset-password",
+        "https://notesapp-backend-iti6.onrender.com/auth/reset-password",
         {
           email: resetEmail,
           newPassword,
@@ -62,12 +62,9 @@ function NewPassword() {
       localStorage.removeItem("resetEmail");
       localStorage.removeItem("resetCode");
 
-      toast.success(
-        "Password reset successfully!",
-        {
-          autoClose: 2000,
-        }
-      );
+      toast.success("Password reset successfully!", {
+        autoClose: 2000,
+      });
 
       // Navigate to login page
       navigate("/login");

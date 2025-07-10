@@ -30,7 +30,7 @@ function EmailFP() {
 
     try {
       const response = await axios.post(
-        "https://noteapplication-backend.onrender.com/auth/send-otp",
+        "https://notesapp-backend-iti6.onrender.com/auth/send-otp",
         {
           email,
         }
