@@ -1,0 +1,20 @@
+{
+  "name": "notesapp",
+  "version": "1.0.0",
+  "description": "A full-stack notes application",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "cd backend && npm start"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "keywords": [
+    "notes",
+    "nodejs",
+    "express",
+    "mongodb"
+  ],
+  "author": "abhay agrawal",
+  "license": "MIT"
+}
